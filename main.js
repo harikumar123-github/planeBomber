@@ -44,6 +44,7 @@ function makeEnemy() {
     }
     player.base = document.createElement('div');
     player.base.classList = 'base';
+    player.base.style.backgroundColor = randomClr();
     player.base.style.width = (Math.floor(Math.random()*250) + 20 )+ 'px';
     player.base.style.height = (Math.floor(Math.random()*100) + 100 )+ 'px';
     player.base.style.left = (Math.floor(Math.random()*(gameArea.offsetWidth-400)) + 100 )+ 'px';
@@ -126,6 +127,11 @@ function moveBomb() {
     });
 }
 
+
+function randomClr(){
+    return "#"+Math.random().toString(16).substr(-6);
+}
+
 function playGame(){
     if(player.inplay){
         moveBomb();
@@ -166,3 +172,5 @@ function playGame(){
 }
 
  
+
+
